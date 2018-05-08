@@ -29,7 +29,7 @@ TripItApiClient.prototype = {
 	requestResource: function (path, method, accessToken, accessTokenSecret) {
 		var url = "https://api.tripit.com/v1" + path;
 		if ( ! path.includes('?') ) {
-		    path += "/format/json";
+		    url += "/format/json";
 		}
 		var deferred = Q.defer();
 		this.oauth.getProtectedResource(url, method, accessToken, accessTokenSecret, deferred.makeNodeResolver());
